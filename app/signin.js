@@ -62,9 +62,15 @@ export default function SignIn() {
                 style={{ fontSize: hp(2) }}
                 className="text-white text-center font-bold tracking-wider "
               >
-                Login
+                Entrar
               </Text>
             </Pressable>
+            <Text
+              style={{ fontSize: hp(1.8) }}
+              className="text-center font-normal text-indigo-500 pt-8"
+            >
+              Não tem uma conta? Resgistre-se
+            </Text>
           </View>
         </View>
       </View>
