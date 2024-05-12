@@ -6,9 +6,11 @@ export const AuthContextPriovider = ({ children }) => {
   const [user, seUser] = useState(null);
   const [isAuthenticaded, setIsAuthenticaded] = useState(undefined);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setIsAuthenticaded(false);
+  }, []);
 
-  const login = async (email, login) => {
+  const login = async (email, password) => {
     try {
     } catch (error) {
       throw new Error("Falha no login");
@@ -18,20 +20,20 @@ export const AuthContextPriovider = ({ children }) => {
   const logout = async () => {
     try {
     } catch (error) {
-      throw new Error("Falha no login");
+      throw new Error("Falha no logout");
     }
   };
 
-  const register = async (email, login, username, profileUrl) => {
+  const register = async (email, password, username, profileUrl) => {
     try {
     } catch (error) {
-      throw new Error("Falha no login");
+      throw new Error("Falha no registro");
     }
   };
 
   return (
     <AuthContext.Provider
-      value={(user, isAuthenticaded, login, logout, register)}
+      value={{ user, isAuthenticaded, login, logout, register }}
     >
       {children}
     </AuthContext.Provider>
